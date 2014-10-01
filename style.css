@@ -1,0 +1,24 @@
+body {
+    font-family: helvetica;
+}
+
+.tasks {
+    margin: 0;
+    padding: 0;
+
+}
+.tasks li {
+    list-style: none;
+    background: #449922;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.tasks li.active {
+    background: #66dd44;
+}
+
+.tasks li .time {
+    font-size: 200%;
+}
