@@ -11,8 +11,7 @@ body {
     list-style: none;
     background: #449922;
     color: white;
-    padding: 10px;
-    margin: 5px;
+    margin: 0 5px;
 }
 
 .tasks li.active {
@@ -21,4 +20,25 @@ body {
 
 .tasks li .time {
     font-size: 200%;
+}
+
+.tasks li .task {
+    padding: 10px 20px;
+}
+
+.tasks li .indicator.completed {
+    background: black;
+}
+.tasks li .indicator {
+    background: transparent;
+    width: 10px;
+    height: 75px;
+    float: left;
+}
+
+.tasks li .indicator .progress {
+    background: black;
+    width: 10px;
+    height: 75px;
+
 }
