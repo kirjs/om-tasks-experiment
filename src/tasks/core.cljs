@@ -4,7 +4,6 @@
 
 (enable-console-print!)
 
-
 (def app-state (atom {
                       :active -1
                       :timeUntilTheNextTask 0
@@ -85,7 +84,6 @@
 
 
 
-
 (defn pause-timer [app]
   ( om/transact! app :running #(identity false)))
 
@@ -106,6 +104,7 @@
     (.log js/console (pr-str (:running @app)))
     (js/setTimeout #(tick app) 1000)
     ))
+
 
 
 (defn indicator-height [time left]
