@@ -1,0 +1,83 @@
+main-color = #40B30A
+body, html
+  font-family helvetica
+  padding 0
+  margin 0
+  .main
+    display flex
+    .tasks
+      margin 0
+      padding 0
+      width 400px
+
+      li
+        list-style none
+        background #fff
+        color black
+        margin 0
+        overflow hidden
+
+        &.active
+          background main-color
+          color #fff
+          .task:hover .play
+            display none
+
+        .time
+          font-size 120%
+          float left
+          width 120px
+
+        .task
+          padding 2px 20px
+          line-height 40px
+          font-size 1.3em
+          position relative
+
+
+
+
+          .play
+            position absolute
+            right 13px
+            top: 13px
+            display none
+            cursor pointer
+          &:hover .play
+            display: block
+
+        .indicator
+          background transparent
+          width 10px
+          height 50px
+          float left
+        &.completed
+          background black
+
+        .progress
+          background black
+          width 10px
+          height 75px
+
+    .current-task
+      flex 1
+      background #eee
+      padding 30px 30px
+
+      h1
+        margin 0
+        padding 0
+        color main-color
+        font-size 300%
+      .time
+        font-size 600%
+
+      .indicator
+        background: #444;
+        height: 300px;
+        .progress
+          height 100%
+          background main-color
+
+
+
