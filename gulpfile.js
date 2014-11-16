@@ -11,23 +11,32 @@ gulp.task('stylus', function () {
         .pipe(gulp.dest('./out/css'))
         .pipe(reload({stream: true}));
 });
+gulp.task('static', function () {
+    gulp.src('./src/static/**/*')
+        .pipe(gulp.dest('./out'))
+        .pipe(reload({stream: true}));
+});
 
 gulp.task('stylus-watch', ['stylus'], function () {
     gulp.watch('./src/stylus/*.styl', ['stylus']);
 });
 
-gulp.task('cljsbuild', shell.task(['lein cljsbuild auto tasks']))
+gulp.task('static-watch', ['static'], function () {
+    gulp.watch('./src/static/**/*', ['static']);
+});
+
+gulp.task('cljsbuild', shell.task(['lein cljsbuild auto tasks']));
 
 gulp.task('serve', function () {
     browserSync({
         server: {
-            baseDir: "./"
+            baseDir: "./out"
         }
     });
 });
 
 
-gulp.task('default', ['cljsbuild', 'serve', 'stylus-watch', 'cljsbuild']);
+gulp.task('default', ['cljsbuild', 'serve', 'static-watch','stylus-watch', 'cljsbuild']);
 
 
 

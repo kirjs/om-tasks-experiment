@@ -18,7 +18,7 @@
     :builds [{:id "tasks"
               :source-paths ["src"]
               :compiler {
-                :output-to "tasks.js"
+                :output-to "out/tasks.js"
                 :output-dir "out"
                 :optimizations :none
 }}]})

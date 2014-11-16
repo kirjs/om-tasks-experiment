@@ -5,8 +5,8 @@
 
 
 
-(defn play-sound [] (. (js/Audio. "250083__tmenar__ring-hitting-sink.mp3") play  ))
 
+(defn play-sound [] (. (js/Audio. "sounds/sink.mp3") play  ))
 
 
 
